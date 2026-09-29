@@ -1,395 +1,292 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>Isabela & Guilherme — Convite</title>
+  <title>Isabela & Guilherme — Convite</title>
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Isabela &amp; Guilherme — 28/11/2026">
-<meta property="og:description" content="Nosso convite de casamento 💍">
-<meta property="og:image" content="https://isabelaeguilherme-28-11-2026.tiiny.site/frente.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1085">
-<meta property="og:image:height" content="1536">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Isabela &amp; Guilherme — 28/11/2026">
+  <meta property="og:description" content="Nosso convite de casamento 💍">
+  <meta property="og:image" content="https://isabelaeguilherme-28-11-2026.tiiny.site/frente.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1085">
+  <meta property="og:image:height" content="1536">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Isabela &amp; Guilherme — 28/11/2026">
-<meta name="twitter:description" content="Nosso convite de casamento 💍">
-<meta name="twitter:image" content="https://isabelaeguilherme-28-11-2026.tiiny.site/frente.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Isabela &amp; Guilherme — 28/11/2026">
+  <meta name="twitter:description" content="Nosso convite de casamento 💍">
+  <meta name="twitter:image" content="https://isabelaeguilherme-28-11-2026.tiiny.site/frente.jpg">
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
-  background: #f7f5f0;
-  font-family: Arial, sans-serif;
-}
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      background: #f7f5f0;
+      font-family: Arial, sans-serif;
+    }
 
-body {
-  overflow-x: hidden;
-}
+    body {
+      overflow-x: hidden;
+    }
 
-.invitation {
-  width: min(100%, 760px);
-  margin: 0 auto;
-  padding: 24px 14px 150px;
-}
+    .invitation {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      padding: 24px 14px 150px;
+    }
 
-/* ========================================
-   CARTÃO 3D
-   ======================================== */
+    .flip-container {
+      width: 100%;
+      perspective: 1800px;
+    }
 
-.flip-container {
-  width: 100%;
-  perspective: 1800px;
-}
+    .flip-card {
+      position: relative;
+      width: 100%;
+      transform-style: preserve-3d;
+      transition: transform 900ms cubic-bezier(.22, .61, .36, 1);
+    }
 
-.flip-card {
-  position: relative;
-  width: 100%;
-  transform-style: preserve-3d;
-  transition: transform 900ms cubic-bezier(.22, .61, .36, 1);
-}
+    .flip-card.flipped {
+      transform: rotateY(180deg);
+    }
 
-.flip-card.flipped {
-  transform: rotateY(180deg);
-}
+    .card-face {
+      width: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
 
-/* ========================================
-   FACES
-   ======================================== */
+    .card-face img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-.card-face {
-  width: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
+    .card-back {
+      position: absolute;
+      inset: 0;
+      transform: rotateY(180deg);
+    }
 
-.card-face img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+    .actions {
+      position: relative;
+      z-index: 20;
 
-.card-back {
-  position: absolute;
-  inset: 0;
-  transform: rotateY(180deg);
-}
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
 
-/*
-   Importante:
-   As faces não possuem mais botões.
-   Os botões ficam fora do cartão 3D.
-*/
+      gap: 12px;
+      margin: 20px auto 0;
+      padding: 0 8px;
+    }
 
-/* ========================================
-   BOTÕES
-   ======================================== */
+    button,
+    .site-link {
+      appearance: none;
 
-.actions {
-  position: relative;
-  z-index: 20;
+      border: 1px solid #b08a35;
+      background: rgba(255, 255, 255, .98);
+      color: #444;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+      padding: 11px 17px;
+      border-radius: 24px;
 
-  gap: 12px;
-  margin: 20px auto 0;
-  padding: 0 8px;
-}
+      font-size: 13px;
+      font-weight: 700;
 
-button,
-.site-link {
-  appearance: none;
+      text-decoration: none;
+      cursor: pointer;
 
-  border: 1px solid #b08a35;
-  background: rgba(255, 255, 255, .98);
-  color: #444;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
 
-  padding: 11px 17px;
-  border-radius: 24px;
+      transition:
+        transform 150ms ease,
+        box-shadow 150ms ease;
+    }
 
-  font-size: 13px;
-  font-weight: 700;
+    button:hover,
+    .site-link:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .16);
+    }
 
-  text-decoration: none;
-  cursor: pointer;
+    button:active,
+    .site-link:active {
+      transform: scale(.98);
+    }
 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+    .manual {
+      display: none;
+      width: 100%;
+    }
 
-  transition:
-    transform 150ms ease,
-    box-shadow 150ms ease;
-}
+    .manual.active {
+      display: block;
+    }
 
-button:hover,
-.site-link:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .16);
-}
+    .manual img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-button:active,
-.site-link:active {
-  transform: scale(.98);
-}
+    @media (max-width: 600px) {
 
-/* ========================================
-   MANUAL
-   ======================================== */
+      .invitation {
+        width: 100%;
+        padding: 18px 12px 150px;
+      }
 
-.manual {
-  display: none;
-  width: 100%;
-}
+      .flip-container {
+        perspective: 1200px;
+      }
 
-.manual.active {
-  display: block;
-}
+      .flip-card {
+        transition-duration: 800ms;
+      }
 
-.manual img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+      .actions {
+        margin-top: 18px;
+        gap: 9px;
+      }
 
-/* ========================================
-   MOBILE
-   ======================================== */
+      button,
+      .site-link {
+        font-size: 12px;
+        padding: 10px 13px;
+      }
+    }
 
-@media (max-width: 600px) {
+    @media (prefers-reduced-motion: reduce) {
 
-  .invitation {
-    width: 100%;
-    padding: 18px 12px 150px;
-  }
+      .flip-card {
+        transition: none;
+      }
 
-  .flip-container {
-    perspective: 1200px;
-  }
-
-  .flip-card {
-    transition-duration: 800ms;
-  }
-
-  .actions {
-    margin-top: 18px;
-    gap: 9px;
-  }
-
-  button,
-  .site-link {
-    font-size: 12px;
-    padding: 10px 13px;
-  }
-}
-
-/* ========================================
-   ACESSIBILIDADE
-   ======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .flip-card {
-    transition: none;
-  }
-
-}
-</style>
+    }
+  </style>
 </head>
 
 <body>
 
-<main class="invitation" aria-label="Convite interativo de casamento">
+  <main class="invitation" aria-label="Convite interativo de casamento">
+    <div id="flipContainer" class="flip-container">
 
-  <!-- ====================================
-       CONVITE FRENTE/VERSO
-       ==================================== -->
+      <div id="flipCard" class="flip-card">
+        <section class="card-face card-front">
+          <img src="frente.jpg" alt="Frente do convite de casamento de Isabela e Guilherme">
+        </section>
 
-  <div id="flipContainer" class="flip-container">
+        <section class="card-face card-back">
+          <img src="verso.jpg" alt="Verso do convite de casamento de Isabela e Guilherme">
+        </section>
 
-    <div id="flipCard" class="flip-card">
-
-      <!-- FRENTE -->
-      <section class="card-face card-front">
-
-        <img
-          src="frente.jpg"
-          alt="Frente do convite de casamento de Isabela e Guilherme"
-        >
-
-      </section>
-
-      <!-- VERSO -->
-      <section class="card-face card-back">
-
-        <img
-          src="verso.jpg"
-          alt="Verso do convite de casamento de Isabela e Guilherme"
-        >
-
-      </section>
+      </div>
 
     </div>
 
-  </div>
+    <div id="invitationActions" class="actions">
 
-
-  <!-- ====================================
-       BOTÕES DO CONVITE
-       ==================================== -->
-
-  <div id="invitationActions" class="actions">
-
-    <button
-      id="flipButton"
-      type="button"
-      onclick="toggleFlip()"
-    >
-      VER O VERSO
-    </button>
-
-    <button
-      type="button"
-      onclick="showManual()"
-    >
-      MANUAL DOS CONVIDADOS
-    </button>
-
-    <a
-      class="site-link"
-      href="https://noivos.casar.com/isabelaeguilherme-28-11-2026"
-      target="_blank"
-      rel="noopener"
-    >
-      SITE DO CASAMENTO
-    </a>
-
-  </div>
-
-
-  <!-- ====================================
-       MANUAL
-       ==================================== -->
-
-  <section
-    id="manual"
-    class="manual"
-    aria-label="Manual dos convidados"
-  >
-
-    <img
-      src="manual.jpg"
-      alt="Manual dos convidados"
-    >
-
-    <div class="actions">
-
-      <button
-        type="button"
-        onclick="hideManual()"
-      >
-        VOLTAR AO CONVITE
+      <button id="flipButton" type="button" onclick="toggleFlip()">
+        VER O VERSO
       </button>
 
-      <a
-        class="site-link"
-        href="https://noivos.casar.com/isabelaeguilherme-28-11-2026"
-        target="_blank"
-        rel="noopener"
-      >
+      <button type="button" onclick="showManual()">
+        MANUAL DOS CONVIDADOS
+      </button>
+
+      <a class="site-link" href="https://noivos.casar.com/isabelaeguilherme-28-11-2026" target="_blank" rel="noopener">
         SITE DO CASAMENTO
       </a>
 
     </div>
 
-  </section>
-
-</main>
-
-
-<script>
-
-/* ========================================
-   FRENTE <-> VERSO
-   ======================================== */
-
-function toggleFlip() {
-
-  const card = document.getElementById('flipCard');
-  const button = document.getElementById('flipButton');
-
-  const isFlipped = card.classList.toggle('flipped');
-
-  if (isFlipped) {
-
-    button.textContent = 'VOLTAR À FRENTE';
-
-  } else {
-
-    button.textContent = 'VER O VERSO';
-
-  }
-
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-}
+    <section id="manual" class="manual" aria-label="Manual dos convidados">
+      <img src="manual.jpg" alt="Manual dos convidados">
+      <div class="actions">
+        <button type="button" onclick="hideManual()">
+          VOLTAR AO CONVITE
+        </button>
+        <a class="site-link" href="https://noivos.casar.com/isabelaeguilherme-28-11-2026" target="_blank"
+          rel="noopener">
+          SITE DO CASAMENTO
+        </a>
+      </div>
+    </section>
+  </main>
 
 
-/* ========================================
-   ABRIR MANUAL
-   ======================================== */
+  <script>
 
-function showManual() {
+    function toggleFlip() {
 
-  document.getElementById('flipContainer').style.display = 'none';
+      const card = document.getElementById('flipCard');
+      const button = document.getElementById('flipButton');
 
-  document.getElementById('invitationActions').style.display = 'none';
+      const isFlipped = card.classList.toggle('flipped');
 
-  document
-    .getElementById('manual')
-    .classList.add('active');
+      if (isFlipped) {
 
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-}
+        button.textContent = 'VOLTAR À FRENTE';
 
+      } else {
 
-/* ========================================
-   VOLTAR DO MANUAL
-   ======================================== */
+        button.textContent = 'VER O VERSO';
 
-function hideManual() {
+      }
 
-  document
-    .getElementById('manual')
-    .classList.remove('active');
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
 
-  document.getElementById('flipContainer').style.display = 'block';
+    function showManual() {
 
-  document.getElementById('invitationActions').style.display = 'flex';
+      document.getElementById('flipContainer').style.display = 'none';
 
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-}
+      document.getElementById('invitationActions').style.display = 'none';
 
-</script>
+      document
+        .getElementById('manual')
+        .classList.add('active');
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    function hideManual() {
+
+      document
+        .getElementById('manual')
+        .classList.remove('active');
+
+      document.getElementById('flipContainer').style.display = 'block';
+
+      document.getElementById('invitationActions').style.display = 'flex';
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+  </script>
 
 </body>
+
 </html>
